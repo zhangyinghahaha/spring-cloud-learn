@@ -1,2 +1,12 @@
 server:
   port: 9000
+spring:
+  application:
+    name: order
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+#      discovery:
+#        username: nacos
+#        password: nacos
+#        namespace: public
