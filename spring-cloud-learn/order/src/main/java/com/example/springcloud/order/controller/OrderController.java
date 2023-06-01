@@ -1,5 +1,6 @@
 package com.example.springcloud.order.controller;
 
+import com.example.springcloud.order.feign.StockService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +12,12 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 @Slf4j
 public class OrderController {
-    private final RestTemplate restTemplate;
+    private final StockService stockService;
 
     @GetMapping("/orders")
     public String create() {
-        log.info("start order...");
-        String url = "http://stock/stocks/reduce";
-        restTemplate.getForObject(url, String.class);
-        return "create order success!";
+        log.info("start create order...");
+        String stockResult = stockService.get("牙刷");
+        return "create order success!\n" + stockResult;
     }
 }
