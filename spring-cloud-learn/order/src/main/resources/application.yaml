@@ -7,9 +7,19 @@ spring:
     nacos:
       server-addr: localhost:8848
       discovery:
-#        username: nacos
-#        password: nacos
+        username: nacos
+        password: nacos
         namespace: 5f5b4d39-7b75-4b59-a237-046b3611d34a
     loadbalancer:
+      # 是否开启基于Nacos的权重均衡策略
       nacos:
         enabled: false
+
+logging:
+  level:
+    com.example: debug
+feign:
+  client:
+    config:
+      stock:
+        logger-level: BASIC
