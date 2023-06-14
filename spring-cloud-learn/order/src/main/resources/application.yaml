@@ -23,3 +23,5 @@ feign:
     config:
       stock:
         logger-level: BASIC
+        connect-timeout: 1000
+        read-timeout: 1000

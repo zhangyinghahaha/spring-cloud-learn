@@ -14,7 +14,8 @@ import java.text.MessageFormat;
 @Slf4j
 public class StockController {
     @GetMapping("/stocks/{name}")
-    public String get(@PathVariable String name) {
+    public String get(@PathVariable String name) throws InterruptedException {
+        Thread.sleep(2000);
         log.info("查询商品库存");
         return MessageFormat.format("{0}库存为: 10", name);
     }

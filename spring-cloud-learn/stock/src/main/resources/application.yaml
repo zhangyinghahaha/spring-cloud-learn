@@ -10,6 +10,3 @@ spring:
         username: nacos
         password: nacos
         namespace: 5f5b4d39-7b75-4b59-a237-046b3611d34a
-    loadbalancer:
-      nacos:
-        enabled: true
