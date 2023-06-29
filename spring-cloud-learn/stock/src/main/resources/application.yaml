@@ -5,8 +5,8 @@ spring:
     name: stock
   cloud:
     nacos:
-      server-addr: localhost:8848
+      server-addr: http://10.6.121.60:8848
       discovery:
         username: nacos
-        password: nacos
-        namespace: 5f5b4d39-7b75-4b59-a237-046b3611d34a
+        password: Eimisd@2023
+        namespace: public
