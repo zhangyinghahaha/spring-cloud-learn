@@ -14,6 +14,9 @@ spring:
       # 是否开启基于Nacos的权重均衡策略
       nacos:
         enabled: false
+      cache:
+        capacity: 128
+        ttl: 30s
 
 logging:
   level:
