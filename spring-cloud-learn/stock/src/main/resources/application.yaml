@@ -5,7 +5,7 @@ spring:
     name: stock
   cloud:
     nacos:
-      server-addr: http://10.6.121.60:8848
+      server-addr: http://playgound:8848
       discovery:
         username: nacos
         password: Eimisd@2023
