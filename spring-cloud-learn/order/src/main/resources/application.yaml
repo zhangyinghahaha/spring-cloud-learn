@@ -6,25 +6,12 @@ spring:
   cloud:
     nacos:
       server-addr: http://playgound:8848
+      username: nacos
+      password: Eimisd@2023
       discovery:
-        username: nacos
-        password: Eimisd@2023
         namespace: public
-    loadbalancer:
-      # 是否开启基于Nacos的权重均衡策略
-      nacos:
-        enabled: false
-      cache:
-        capacity: 128
-        ttl: 30s
-
-logging:
-  level:
-    com.example: debug
-feign:
-  client:
-    config:
-      stock:
-        logger-level: FULL
-        connect-timeout: 1000
-        read-timeout: 1000
+      config:
+        namespace: public
+  config:
+    import:
+      - optional:nacos:order.yaml
