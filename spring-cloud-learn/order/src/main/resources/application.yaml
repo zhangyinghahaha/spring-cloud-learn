@@ -1,8 +1,11 @@
-server:
-  port: 9000
 spring:
+  profiles:
+    active: "dev"
   application:
     name: order
+
+---
+spring:
   cloud:
     nacos:
       server-addr: http://playgound:8848
@@ -13,5 +16,24 @@ spring:
       config:
         namespace: public
   config:
+    activate:
+      on-profile: dev
+    import:
+      - optional:nacos:${spring.application.name}.yaml
+
+---
+spring:
+  cloud:
+    nacos:
+      server-addr: http://playgound:8848
+      username: nacos
+      password: Eimisd@2023
+      discovery:
+        namespace: public
+      config:
+        namespace: public
+  config:
+    activate:
+      on-profile: prod
     import:
       - optional:nacos:order.yaml
