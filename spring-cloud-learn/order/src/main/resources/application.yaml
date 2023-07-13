@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: "dev"
+    active: dev
   application:
     name: order
 
@@ -29,11 +29,11 @@ spring:
       username: nacos
       password: Eimisd@2023
       discovery:
-        namespace: public
+        namespace: prod
       config:
-        namespace: public
+        namespace: prod
   config:
     activate:
       on-profile: prod
     import:
-      - optional:nacos:order.yaml
+      - optional:nacos:${spring.application.name}.yaml
