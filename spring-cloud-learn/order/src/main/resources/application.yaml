@@ -19,7 +19,9 @@ spring:
     activate:
       on-profile: dev
     import:
+      - optional:nacos:${spring.application.name}2.yaml
       - optional:nacos:${spring.application.name}.yaml
+
 
 ---
 spring:
