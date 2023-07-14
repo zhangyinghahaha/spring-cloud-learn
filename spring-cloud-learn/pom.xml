@@ -28,6 +28,7 @@
     <modules>
         <module>order</module>
         <module>stock</module>
+        <module>stock2</module>
     </modules>
 
     <dependencyManagement>

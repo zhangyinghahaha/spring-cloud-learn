@@ -1,8 +1,8 @@
 spring:
   profiles:
-    active: dev
+    active: "dev"
   application:
-    name: order
+    name: stock
 
 ---
 spring:
@@ -13,13 +13,14 @@ spring:
       password: Eimisd@2023
       discovery:
         namespace: public
+        ephemeral: false
       config:
         namespace: public
   config:
     activate:
       on-profile: dev
     import:
-      - optional:nacos:${spring.application.name}.yaml
+      - optional:nacos:${spring.application.name}2.yaml
 
 ---
 spring:
@@ -29,9 +30,9 @@ spring:
       username: nacos
       password: Eimisd@2023
       discovery:
-        namespace: prod
+        namespace: public
       config:
-        namespace: prod
+        namespace: public
   config:
     activate:
       on-profile: prod

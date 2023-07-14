@@ -13,6 +13,7 @@ spring:
       password: Eimisd@2023
       discovery:
         namespace: public
+        ephemeral: false
       config:
         namespace: public
   config:
